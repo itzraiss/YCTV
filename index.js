@@ -78,6 +78,27 @@ async function getCategory(url, page = 1, cookie = '') {
 
 // Extrai detalhes completos de um item (filme, série, etc)
 async function getDetails(url, cookie = '') {
+
+// Extrai link do vídeo, legendas e poster para o player
+async function getPlayerData(url, cookie = '') {
+  const fullUrl = url.startsWith('http') ? url : BASE_URL + url;
+  const $ = await fetchAndParse(fullUrl, cookie);
+  if (!$) return null;
+  // O src do vídeo geralmente está em <video src=...>
+  const videoSrc = $('video').attr('src') || '';
+  const poster = $('video').attr('poster') || $('video').attr('data-poster') || '';
+  // Legendas podem estar em <track>
+  let subtitles = [];
+  $('track[kind="subtitles"]').each((i, el) => {
+    subtitles.push({
+      src: $(el).attr('src'),
+      label: $(el).attr('label'),
+      lang: $(el).attr('srclang')
+    });
+  });
+  return { videoSrc, poster, subtitles };
+}
+
   const fullUrl = url.startsWith('http') ? url : BASE_URL + url;
   const $ = await fetchAndParse(fullUrl, cookie);
   if (!$) return null;
@@ -178,6 +199,15 @@ app.get('/search', async (req, res) => {
     });
   });
   res.json({ items });
+});
+
+app.get('/play', async (req, res) => {
+  const { url } = req.query;
+  const cookie = req.headers['x-session-cookie'] || '';
+  if (!url) return res.status(400).json({ error: 'Faltou url.' });
+  const data = await getPlayerData(url, cookie);
+  if (!data || !data.videoSrc) return res.status(500).json({ error: 'Não foi possível extrair o vídeo.' });
+  res.json(data);
 });
 
 // Rota raiz obrigatória para HuggingFace Spaces detectar o backend
