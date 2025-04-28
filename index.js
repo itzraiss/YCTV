@@ -180,6 +180,11 @@ app.get('/search', async (req, res) => {
   res.json({ items });
 });
 
+// Rota raiz obrigatória para HuggingFace Spaces detectar o backend
+app.get('/', (req, res) => {
+  res.send('OK');
+});
+
 app.listen(PORT, () => {
-  console.log(`Backend Youcine rodando na porta ${PORT}`);
+  console.log('Servidor rodando na porta ' + PORT);
 });
