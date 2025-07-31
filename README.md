@@ -1,155 +1,158 @@
-# StreamVault - Universal Streaming Platform
+# StreamVault - Plataforma de Streaming Brasileira
 
-## 🎬 Project Overview
+## 🎬 Visão Geral do Projeto
 
-StreamVault is a comprehensive streaming platform that unifies movies, series, anime, cartoons, and games in one seamless experience. Built with modern web technologies and designed for zero-cost initial deployment with infinite scalability.
+StreamVault é uma plataforma de streaming completa que unifica filmes, séries, animes, desenhos e jogos em uma única experiência. Construída com tecnologias modernas e projetada para implantação inicial gratuita com escalabilidade infinita, focada no mercado brasileiro.
 
-### 🌟 Key Features
+### 🌟 Recursos Principais
 
-- **Multi-Platform Support**: Web, Android, Android TV, Roku TV
-- **Universal Content**: Movies, TV shows, anime, cartoons, games
-- **Modern Authentication**: Email, phone, Google, Facebook OAuth
-- **Subscription Model**: Starting at $7.99/month
-- **Multi-Language Support**: Dubbing and subtitles
-- **Adaptive Streaming**: Multiple quality options
-- **Netflix-Inspired UI**: Clean, intuitive, responsive design
+- **Suporte Multi-Plataforma**: Web, Android, Android TV, Roku TV
+- **Conteúdo Universal**: Filmes, séries de TV, animes, desenhos, jogos
+- **Autenticação Moderna**: Email, telefone, Google e Facebook OAuth
+- **Modelo de Assinatura**: A partir de R$ 19,99/mês
+- **Suporte Multi-Idioma**: Dublagem e legendas em português
+- **Streaming Adaptativo**: Múltiplas opções de qualidade
+- **Interface Inspirada na Netflix**: Design limpo, intuitivo e responsivo
+- **Pagamentos Brasileiros**: PIX, cartão de débito/crédito via Mercado Pago
 
-## 🏗️ Architecture Overview
+## 🏗️ Arquitetura da Plataforma
 
-### Tech Stack
+### Stack Tecnológica
 
 **Backend:**
-- **Framework**: Node.js with Express.js
-- **Database**: MongoDB Atlas (Free Tier)
-- **Authentication**: Firebase Auth + Passport.js
-- **Hosting**: Render (Free Tier)
-- **CDN**: Cloudflare (Free Tier)
-- **File Storage**: Cloudinary (Free Tier)
+- **Framework**: Node.js com Express.js
+- **Banco de Dados**: MongoDB Atlas (Tier Gratuito)
+- **Autenticação**: Firebase Auth + Passport.js
+- **Hospedagem**: Render (Tier Gratuito)
+- **CDN**: Cloudflare (Tier Gratuito)
+- **Armazenamento**: Cloudinary (Tier Gratuito)
+- **Pagamentos**: Mercado Pago (PIX, Cartões)
 
 **Frontend:**
-- **Web**: React.js with Next.js (SSR/SSG)
-- **Mobile**: React Native (Android APK)
+- **Web**: React.js com Next.js (SSR/SSG)
+- **Mobile**: React Native (APK Android)
 - **TV Apps**: React Native TV (Android TV), Roku SDK
-- **UI Framework**: Tailwind CSS + Framer Motion
-- **State Management**: Zustand
+- **Framework UI**: Tailwind CSS + Framer Motion
+- **Gerenciamento de Estado**: Zustand
 
-**Infrastructure:**
-- **API Gateway**: Express.js with rate limiting
-- **Caching**: Redis (Upstash Free Tier)
-- **Monitoring**: Sentry (Free Tier)
+**Infraestrutura:**
+- **Gateway API**: Express.js com limitação de taxa
+- **Cache**: Redis (Upstash Tier Gratuito)
+- **Monitoramento**: Sentry (Tier Gratuito)
 - **Analytics**: Google Analytics 4
 
-## 📱 Platform Roadmap
+## 📱 Roteiro da Plataforma
 
-### Phase 1: Web MVP (Weeks 1-4)
-- [ ] Backend API setup
-- [ ] User authentication system
-- [ ] Basic media database
-- [ ] Responsive web interface
-- [ ] Content aggregation system
+### Fase 1: MVP Web (Semanas 1-4)
+- [ ] Configuração da API backend
+- [ ] Sistema de autenticação de usuários
+- [ ] Banco de dados básico de mídia
+- [ ] Interface web responsiva
+- [ ] Sistema de agregação de conteúdo
 
-### Phase 2: Mobile App (Weeks 5-8)
-- [ ] React Native Android app
-- [ ] APK generation and distribution
-- [ ] Mobile-optimized UI
-- [ ] Offline viewing capabilities
+### Fase 2: Aplicativo Mobile (Semanas 5-8)
+- [ ] App React Native Android
+- [ ] Geração e distribuição de APK
+- [ ] Interface otimizada para mobile
+- [ ] Capacidades de visualização offline
 
-### Phase 3: TV Applications (Weeks 9-12)
-- [ ] Android TV app
-- [ ] Roku TV channel
-- [ ] TV-optimized navigation
-- [ ] Remote control support
+### Fase 3: Aplicações para TV (Semanas 9-12)
+- [ ] App Android TV
+- [ ] Canal Roku TV
+- [ ] Navegação otimizada para TV
+- [ ] Suporte para controle remoto
 
-### Phase 4: Advanced Features (Weeks 13-16)
-- [ ] Payment integration (Stripe)
-- [ ] Advanced recommendation engine
-- [ ] Social features and reviews
-- [ ] Admin dashboard
+### Fase 4: Recursos Avançados (Semanas 13-16)
+- [ ] Integração de pagamentos (Mercado Pago)
+- [ ] Sistema de recomendação avançado
+- [ ] Recursos sociais e avaliações
+- [ ] Painel administrativo
 
-## 🚀 Getting Started
+## 🚀 Começando
 
-### Prerequisites
+### Pré-requisitos
 - Node.js 18+
-- MongoDB Atlas account
-- Firebase project
-- Cloudflare account
+- Conta MongoDB Atlas
+- Projeto Firebase
+- Conta Cloudflare
+- Conta Mercado Pago
 
-### Installation
+### Instalação
 ```bash
-git clone https://github.com/yourusername/streamvault.git
+git clone https://github.com/seuusuario/streamvault.git
 cd streamvault
 npm install
 npm run dev
 ```
 
-## 📊 Performance Optimization
+## 📊 Otimização de Performance
 
-- **Bundle Splitting**: Lazy loading and code splitting
-- **Image Optimization**: WebP format with fallbacks
-- **Caching Strategy**: Service workers and CDN caching
-- **Database Optimization**: Indexed queries and aggregation pipelines
-- **Streaming Optimization**: Adaptive bitrate streaming
+- **Divisão de Bundle**: Carregamento lazy e divisão de código
+- **Otimização de Imagem**: Formato WebP com fallbacks
+- **Estratégia de Cache**: Service workers e cache CDN
+- **Otimização de Banco**: Consultas indexadas e pipelines de agregação
+- **Otimização de Streaming**: Streaming de taxa de bits adaptativa
 
-## 🔒 Security Features
+## 🔒 Recursos de Segurança
 
-- JWT token authentication
-- Rate limiting and DDoS protection
-- HTTPS everywhere
-- Input validation and sanitization
-- CORS configuration
-- Environment variable management
+- Autenticação por token JWT
+- Limitação de taxa e proteção DDoS
+- HTTPS em todos os lugares
+- Validação e sanitização de entrada
+- Configuração CORS
+- Gerenciamento de variáveis de ambiente
 
-## 💰 Cost Structure
+## 💰 Estrutura de Custos
 
-### Free Tier Limits
-- **Render**: 750 hours/month
-- **MongoDB Atlas**: 512MB storage
-- **Cloudflare**: Unlimited bandwidth
-- **Firebase Auth**: 50,000 MAU
-- **Cloudinary**: 25 credits/month
+### Limites do Tier Gratuito
+- **Render**: 750 horas/mês
+- **MongoDB Atlas**: 512MB de armazenamento
+- **Cloudflare**: Largura de banda ilimitada
+- **Firebase Auth**: 50.000 MAU
+- **Cloudinary**: 25 créditos/mês
 
-### Scaling Strategy
-- Automatic migration to paid tiers
-- Horizontal scaling with load balancers
-- Database sharding for large datasets
-- CDN optimization for global reach
+### Estratégia de Escalonamento
+- Migração automática para tiers pagos
+- Escalonamento horizontal com balanceadores de carga
+- Sharding de banco de dados para grandes conjuntos de dados
+- Otimização CDN para alcance global
 
-## 🎯 Suggested Platform Names
+## 🎯 Nomes Sugeridos para a Plataforma
 
-1. **StreamVault** (Primary suggestion)
-2. **FlixUnity**
-3. **MediaHub Pro**
-4. **StreamCentral**
-5. **UniversalStream**
+1. **StreamVault** (Sugestão principal)
+2. **FlixBrasil**
+3. **MediaHub Brasil**
+4. **StreamCentral BR**
+5. **CineStream**
 
-**Domain Suggestions:**
+**Sugestões de Domínio:**
+- streamvault.com.br
+- flixbrasil.com.br
 - streamvault.app
-- streamvault.tv
-- flixunity.com
-- mediahub.pro
+- cinestream.com.br
 
-## 📈 Monetization Strategy
+## 📈 Estratégia de Monetização
 
-- **Basic Plan**: $7.99/month (HD, 2 devices)
-- **Premium Plan**: $12.99/month (4K, 4 devices, downloads)
-- **Family Plan**: $16.99/month (4K, 6 devices, profiles)
-- **Annual Discounts**: 2 months free
+- **Plano Básico**: R$ 19,99/mês (HD, 2 dispositivos)
+- **Plano Premium**: R$ 29,99/mês (4K, 4 dispositivos, downloads)
+- **Plano Família**: R$ 39,99/mês (4K, 6 dispositivos, perfis)
+- **Descontos Anuais**: 2 meses grátis
 
-## 🛠️ Development Guidelines
+## 🛠️ Diretrizes de Desenvolvimento
 
-- **Code Quality**: ESLint + Prettier + Husky
-- **Testing**: Jest + React Testing Library
-- **Documentation**: JSDoc + Storybook
-- **Version Control**: Git with conventional commits
+- **Qualidade de Código**: ESLint + Prettier + Husky
+- **Testes**: Jest + React Testing Library
+- **Documentação**: JSDoc + Storybook
+- **Controle de Versão**: Git com commits convencionais
 - **CI/CD**: GitHub Actions
 
-## 📞 Support & Contributing
+## 📞 Suporte e Contribuição
 
 - **Issues**: GitHub Issues
-- **Discussions**: GitHub Discussions
-- **Email**: support@streamvault.app
-- **Discord**: [Community Server]
+- **Discussões**: GitHub Discussions
+- **Email**: suporte@streamvault.com.br
+- **Discord**: [Servidor da Comunidade]
 
 ---
 
-Built with ❤️ for the streaming revolution
+Construído com ❤️ para a revolução do streaming brasileiro
