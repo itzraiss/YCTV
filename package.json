@@ -1,7 +1,7 @@
 {
-  "name": "streamvault",
+  "name": "streamvault-brasil",
   "version": "1.0.0",
-  "description": "Universal streaming platform unifying movies, series, anime, cartoons, and games",
+  "description": "Plataforma de streaming brasileira unificando filmes, séries, animes, desenhos e jogos",
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
@@ -15,21 +15,23 @@
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "setup": "npm install && cd frontend && npm install && cd ../mobile && npm install",
-    "db:seed": "node scripts/seedDatabase.js",
+    "db:seed": "node scripts/popularBanco.js",
     "deploy": "npm run build && npm run deploy:render"
   },
   "keywords": [
     "streaming",
-    "netflix",
-    "movies",
+    "brasil",
+    "filmes",
     "series",
     "anime",
-    "entertainment",
+    "entretenimento",
     "react",
     "nodejs",
-    "mongodb"
+    "mongodb",
+    "mercadopago",
+    "pix"
   ],
-  "author": "StreamVault Team",
+  "author": "StreamVault Brasil Team",
   "license": "MIT",
   "dependencies": {
     "express": "^4.18.2",
@@ -45,7 +47,7 @@
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",
     "passport-facebook": "^3.0.0",
-    "stripe": "^14.9.0",
+    "mercadopago": "^2.0.9",
     "nodemailer": "^6.9.7",
     "multer": "^1.4.5-lts.1",
     "cloudinary": "^1.41.0",
@@ -56,7 +58,11 @@
     "node-cron": "^3.0.3",
     "axios": "^1.6.2",
     "cheerio": "^1.0.0-rc.12",
-    "socket.io": "^4.7.4"
+    "socket.io": "^4.7.4",
+    "moment-timezone": "^0.5.43",
+    "validator": "^13.11.0",
+    "qrcode": "^1.5.3",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "nodemon": "^3.0.2",
@@ -80,12 +86,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/streamvault.git"
+    "url": "https://github.com/seuusuario/streamvault-brasil.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/streamvault/issues"
+    "url": "https://github.com/seuusuario/streamvault-brasil/issues"
   },
-  "homepage": "https://streamvault.app",
+  "homepage": "https://streamvault.com.br",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
