@@ -1,0 +1,41 @@
+services:
+  # Backend API Service
+  - type: web
+    name: streamvault-api
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        fromDatabase:
+          name: streamvault-db
+          property: connectionString
+      - key: JWT_ACCESS_SECRET
+        generateValue: true
+      - key: JWT_REFRESH_SECRET
+        generateValue: true
+      - key: CORS_ORIGIN
+        value: https://streamvault.onrender.com
+    autoDeploy: true
+    branch: main
+    
+databases:
+  # MongoDB Database
+  - name: streamvault-db
+    databaseName: streamvault
+    plan: free
+    
+# Static Site (Frontend)
+# Note: This would be configured separately in the frontend directory
+# - type: static
+#   name: streamvault-frontend
+#   buildCommand: npm run build
+#   staticPublishPath: ./build
+#   pullRequestPreviewsEnabled: true
+#   branch: main
