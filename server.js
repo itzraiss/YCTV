@@ -93,6 +93,12 @@ app.use('/api/user', userRoutes);
 app.use('/api/subscription', subscriptionRoutes);
 app.use('/api/admin', adminRoutes);
 
+// Rotas de pagamento brasileiro
+app.use('/api/pagamentos', require('./routes/pagamentos'));
+
+// Rotas de embed (similar ao Acteia)
+app.use('/embed', require('./routes/embed'));
+
 // Serve static files in production
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('frontend/build'));
